@@ -33,8 +33,8 @@ while read line; do
       APP_SSL_PATH="$APP_ROOT/tls"
       # shellcheck disable=SC2034
       SSL_DIRECTIVES=$(cat <<EOF
-ssl_certificate     $APP_SSL_PATH/server.crt;
-ssl_certificate_key $APP_SSL_PATH/server.key;
+  ssl_certificate     $APP_SSL_PATH/server.crt;
+  ssl_certificate_key $APP_SSL_PATH/server.key;
 EOF
 )
       eval "cat <<< \"$(< "$TEMPLATE_TLS")\" >> $NGINX_CONF"
